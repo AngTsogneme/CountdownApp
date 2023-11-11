@@ -20,14 +20,8 @@ struct ContentView: View {
             Spacer()
             Button{
                 
-            }label:{
-                Text("Add Event")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .frame(width:280,height:50)
-                    .background(Color.yellow)
-                    .foregroundColor(.black)
-                    .cornerRadius(10)
+            }label: {
+                CButtons(title: "Add Event")
             }
             
         }
