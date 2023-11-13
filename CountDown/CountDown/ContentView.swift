@@ -7,24 +7,43 @@
 
 import SwiftUI
 
+struct Event {
+    var eventName: String
+    var eventDate: Date
+}
+
+
 struct ContentView: View {
+    
+    @State private var events: [Event] = []
+    @State private var isAddEventViewPresented = false
     var body: some View {
-        VStack{
-            
-            Text("Events")
-                .font(.title)
-                .fontWeight(.semibold)
-            
-            EventBannerView(EventName: "My Birthday", EventDate: "Feb 2", Time: 12)
-            EventBannerView(EventName: "Anniversary", EventDate: "Aug 22", Time: 12)
-            Spacer()
-            Button{
+        NavigationView{
+            VStack{
                 
-            }label: {
-                CButtons(title: "Add Event")
+                Text("Events")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                
+                ForEach(events, id: \.eventName) {
+                    event in EventBannerView(EventName: event.eventName, EventDate:event.eventDate)
+                }
+                Spacer()
+                Button{
+                    isAddEventViewPresented.toggle()
+                }label: {
+                    CButtons(title: "Add Event")
+                }
+                .sheet(isPresented: $isAddEventViewPresented) {
+                    AddEventView(eventName: "") {
+                        newEvent in events.append(newEvent)
+                        isAddEventViewPresented = false
+                    }
+                }
+                
             }
-            
         }
+       
     }
 }
 
@@ -36,8 +55,8 @@ struct ContentView_Previews: PreviewProvider {
 
 struct EventBannerView: View{
     var EventName: String
-    var EventDate: String
-    var Time: Int
+    var EventDate: Date
+   
     var body: some View{
         LazyVGrid(columns: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Columns@*/[GridItem(.fixed(200))]/*@END_MENU_TOKEN@*/) {
             ZStack{
@@ -51,14 +70,12 @@ struct EventBannerView: View{
                             .font(.headline)
                             .padding(.bottom,0.5)
 
-                        Text(EventDate)
-                            .foregroundColor(.black)
+                       
                             
                     }
                     Spacer()
-                    Text(String(Time) + " hours")
+                    Text(EventDate.formatted())
                         .foregroundColor(.black)
-                        .font(.title2)
                         .fontWeight(.bold)
                 }.padding()
                 
