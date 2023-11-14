@@ -10,10 +10,24 @@ import SwiftUI
 struct AddEventView: View {
     @State var eventName: String
     @State var eventDate = Date()
+    
     var onAddEvent: (Event) -> Void
     var body: some View {
         NavigationView{
             VStack{
+                
+                HStack{
+                    Spacer()
+                    Button{
+                        
+                    }label: {
+                        Image(systemName: "xmark")
+                            .foregroundColor(Color(.label))
+                            .imageScale(.large)
+                            .frame(width:44, height:44)
+                    }
+                }.padding()
+                
                 Form{
                     TextField("Enter event name", text: $eventName)
                         .padding(.leading, 10.0)
@@ -25,13 +39,7 @@ struct AddEventView: View {
                                in: Date()...)
                     .datePickerStyle(GraphicalDatePickerStyle())
                 }
-                let seconds = eventDate.timeIntervalSince(Date())
-                let days = String(round(seconds/86400))
-                Text(days)
-                let hours = String(round(Double((Int(seconds)%86400))/3600.0))
-                Text(hours)
-                let minutes = String(round(Double((Int(seconds)%3600))/60.0))
-                Text(minutes)
+                
                 
                 
                 Button{
@@ -49,7 +57,7 @@ struct AddEventView: View {
 
 struct AddEventView_Previews: PreviewProvider {
     static var previews: some View {
-        let events: [Event] = []
+        let _: [Event] = []
         AddEventView(eventName: "", onAddEvent: { _ in })
     }
 }

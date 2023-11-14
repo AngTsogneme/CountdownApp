@@ -17,6 +17,7 @@ struct ContentView: View {
     
     @State private var events: [Event] = []
     @State private var isAddEventViewPresented = false
+    @State public var selectedEvent: Event? = nil
     var body: some View {
         NavigationView{
             VStack{
@@ -25,8 +26,11 @@ struct ContentView: View {
                     .font(.title)
                     .fontWeight(.semibold)
                 
-                ForEach(events, id: \.eventName) {
-                    event in EventBannerView(EventName: event.eventName, EventDate:event.eventDate)
+                
+                ForEach(events, id: \.eventName) { event in
+                    NavigationLink(destination: EventDetailView(event: event)) {
+                        EventBannerView(EventName: event.eventName, EventDate: event.eventDate)
+                    }
                 }
                 Spacer()
                 Button{
@@ -49,7 +53,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let event = Event(eventName: "Preview", eventDate: Date())
+        ContentView(selectedEvent: event)
+        
     }
 }
 

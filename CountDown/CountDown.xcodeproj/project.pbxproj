@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B90D62912AFF3FA00067A5B1 /* CButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90D62902AFF3FA00067A5B1 /* CButtons.swift */; };
+		B90D62952B035C300067A5B1 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90D62942B035C300067A5B1 /* EventDetailView.swift */; };
+		B90D62972B0375150067A5B1 /* CountdownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90D62962B0375150067A5B1 /* CountdownTimerView.swift */; };
 		B9B9550F2AFE0FF30059E2BB /* CountDownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B9550E2AFE0FF30059E2BB /* CountDownApp.swift */; };
 		B9B955112AFE0FF30059E2BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B955102AFE0FF30059E2BB /* ContentView.swift */; };
 		B9B955132AFE0FF40059E2BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9B955122AFE0FF40059E2BB /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		B90D62902AFF3FA00067A5B1 /* CButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CButtons.swift; sourceTree = "<group>"; };
+		B90D62942B035C300067A5B1 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		B90D62962B0375150067A5B1 /* CountdownTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimerView.swift; sourceTree = "<group>"; };
 		B9B9550B2AFE0FF30059E2BB /* CountDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B9550E2AFE0FF30059E2BB /* CountDownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownApp.swift; sourceTree = "<group>"; };
 		B9B955102AFE0FF30059E2BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 				B9B955142AFE0FF40059E2BB /* Preview Content */,
 				B9B9551C2AFE2A790059E2BB /* AddEventView.swift */,
 				B90D62902AFF3FA00067A5B1 /* CButtons.swift */,
+				B90D62942B035C300067A5B1 /* EventDetailView.swift */,
+				B90D62962B0375150067A5B1 /* CountdownTimerView.swift */,
 			);
 			path = CountDown;
 			sourceTree = "<group>";
@@ -144,6 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9B955112AFE0FF30059E2BB /* ContentView.swift in Sources */,
+				B90D62952B035C300067A5B1 /* EventDetailView.swift in Sources */,
+				B90D62972B0375150067A5B1 /* CountdownTimerView.swift in Sources */,
 				B9B9551D2AFE2A790059E2BB /* AddEventView.swift in Sources */,
 				B9B9550F2AFE0FF30059E2BB /* CountDownApp.swift in Sources */,
 				B90D62912AFF3FA00067A5B1 /* CButtons.swift in Sources */,
